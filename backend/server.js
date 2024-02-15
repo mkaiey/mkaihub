@@ -28,7 +28,8 @@ app.use(
 // persistent login sessions (recommended).
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cors());
+// Here we can remove the cors, it's not necessary in production because the frontend and backend are on the same domain.
+// app.use(cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
